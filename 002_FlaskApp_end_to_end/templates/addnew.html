@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% from "base/form_helpers.html" import render_field %}
+
+<div class="container">
+
+
+    <h3>Add New Page</h3>
+    <hr>
+    <br>
+    You can add new song and the lyrics here.
+
+    <form method=post>
+        <dl>
+            {{ render_field(form.singer, class='form-control') }}
+            {{ render_field(form.song, class='form-control') }}
+            {{ render_field(form.album, class='form-control') }}
+            {{ render_field(form.lyrics, class='form-control') }}
+        </dl>
+        <p><button type="search" . class="btn btn-primary">Save</button>
+    </form>
+
+</div>
+
+{% endblock %}

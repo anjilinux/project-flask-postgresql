@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container">
+
+
+    <h3>Latest Songs Page</h3>
+    <hr>
+    <br>
+    You can see here 20 latest added songs.
+
+    {% if dataframe %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Singer</th>
+        <th scope="col">Song</th>
+        <th scope="col">Album</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for row in dataframe %}
+      <tr>
+        <th>{{row['index']+1}}</th>
+        <td>{{row['singer']}}</td>
+        <td><a href="/lyrics/{{row['song_id']}}">{{row['song']}}</a></td>
+        <td>{{row['album']}}</td>
+      </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+{% endif %}
+</div>
+
+{% endblock %}

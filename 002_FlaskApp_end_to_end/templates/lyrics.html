@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <h3>{{singer}} - {{song}}</h3>
+    <h5>{{album}}</h5>
+    <hr>
+    <br>
+    {{lyrics|safe}}
+</div>
+
+{% endblock %}
